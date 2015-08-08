@@ -6,7 +6,6 @@ namespace Katas.Codility.CSharp.MissingInteger
     [TestFixture]
     public class KataTests
     {
-        [Test]
         [TestCase(new[] { 1, 3, 6, 4, 1, 2 }, 5)]
         [TestCase(new[] { 2 }, 1)]
         [TestCase(new[] { 1 }, 2)]
