@@ -47,6 +47,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CSharp\FrogRiverOne\Kata.cs" />
+    <Compile Include="CSharp\FrogRiverOne\KataTests.cs" />
     <Compile Include="Katas.cs" />
     <Compile Include="CSharp\MissingInteger\Kata.cs" />
     <Compile Include="CSharp\MissingInteger\KataTests.cs" />
