@@ -1,4 +1,4 @@
-﻿using System.Linq;
+﻿using System;
 
 namespace Katas.Codility.CSharp.MaxCounters
 {
@@ -6,29 +6,32 @@ namespace Katas.Codility.CSharp.MaxCounters
     {
         public int[] solution(int N, int[] A)
         {
-            var counters = new int[N];
-            int maxCounter = 0;
-            var setAll = 0;
+            int[] result = new int[N];
+            int maximum = 0;
 
-            for (int i = 0; i < A.Count(); i++)
+            for (int K = 0; K < A.Length; K++)
             {
-                if (A[i] <= N)
+                if (A[K] < 1 || A[K] > N + 1)
+                    throw new InvalidOperationException();
+
+                if (A[K] >= 1 && A[K] <= N)
                 {
-                    var newCounter = Increase(A[i], counters);
-                    maxCounter = maxCounter < newCounter ? newCounter : maxCounter;
+                    result[A[K] - 1]++;
+
+                    if (result[A[K] - 1] > maximum)
+                    {
+                        maximum = result[A[K] - 1];
+                    }
                 }
-                else if (A[i] == N + 1)
+                else
                 {
-                    setAll = maxCounter;
+                    // inefficiency here
+                    for (int i = 0; i < result.Length; i++)
+                        result[i] = maximum;
                 }
             }
 
-            return counters.Select(x => x + setAll).ToArray();
-        }
-
-        private int Increase(int X, int[] counters)
-        {
-            return ++counters[X - 1];
+            return result;
         }
     }
 }
