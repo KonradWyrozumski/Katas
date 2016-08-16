@@ -29,11 +29,5 @@ namespace Katas.Codewars.CSharp.SumSquaredDivisors
         {
             Assert.AreEqual("[[1434, 2856100]]", SumSquaredDivisors.listSquared(978, 1434));
         }
-
-        [Test]
-        public void Test05()
-        {
-            Assert.AreEqual("[[1, 1], [42, 2500], [246, 84100]]", SumSquaredDivisors.listSquared(1, 100000));
-        }
     }
 }
